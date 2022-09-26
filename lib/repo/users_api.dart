@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test_bloc/models/Users.dart';
+import 'package:flutter_test_bloc/repo/interceptors_api.dart';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
@@ -28,28 +29,5 @@ class UsersApi {
     } catch (error) {
       throw Exception(error);
     }
-  }
-}
-
-class ApiResponces extends Interceptor {
-  @override
-  void onError(DioError err, ErrorInterceptorHandler handler) {
-    final options = err.requestOptions;
-    final requestPath = '${options.baseUrl}${options.path}';
-    print(requestPath);
-    return super.onError(err, handler);
-  }
-
-  @override
-  void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
-    final requestPath = '${options.baseUrl}${options.path}';
-    print(requestPath);
-    return super.onRequest(options, handler);
-  }
-
-  @override
-  void onResponse(Response response, ResponseInterceptorHandler handler) {
-    ;
-    return super.onResponse(response, handler);
   }
 }
