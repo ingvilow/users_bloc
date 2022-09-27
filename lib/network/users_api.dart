@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:dio/dio.dart';
 import 'package:flutter_test_bloc/models/Users.dart';
-import 'package:flutter_test_bloc/repo/interceptors_api.dart';
+import 'package:flutter_test_bloc/network/interceptors_api.dart';
 
 const BASE_URL = 'https://jsonplaceholder.typicode.com';
 
@@ -23,8 +23,6 @@ class UsersApi {
       var usersList = (response.data as List)
           .map((users) => Users.fromJson(users))
           .toList();
-      print(usersList);
-      print('usersList');
       return usersList;
     } catch (error) {
       throw Exception(error);
