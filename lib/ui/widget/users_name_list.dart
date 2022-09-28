@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test_bloc/models/Users.dart';
 import 'package:flutter_test_bloc/styles/colors.dart';
@@ -43,11 +42,3 @@ class UsersNameList extends StatelessWidget {
     );
   }
 }
-/*
-*  trailing: IconButton(
-            onPressed: () {},
-            icon: Icon(
-              Icons.favorite_outlined,
-              color: ColorsApp.errorRed,
-            ),
-          )*/

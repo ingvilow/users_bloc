@@ -29,10 +29,9 @@ class _UsersMainPageState extends State<UsersMainPage> {
           return state.when(
               loading: () {
                 return const Center(
-                  child: CircularProgressIndicator(
-                    backgroundColor: ColorsApp.russianViolete,
-                  ),
-                );
+                    child: CircularProgressIndicator(
+                  backgroundColor: ColorsApp.russianViolete,
+                ));
               },
               data: (List<Users> usersList) {
                 return UsersNameList(users: usersList);
