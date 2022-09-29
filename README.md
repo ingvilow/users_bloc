@@ -1,16 +1,17 @@
-# flutter_test_bloc
+# Bloc Test App With Different open API's kinds (maybe besides graphQL because i can't find that kind of open api)
 
-A new Flutter project.
+A new Flutter Bloc Test project.
 
-## Getting Started
+## Packages I have used or am going to use: 
 
-This project is a starting point for a Flutter application.
+- Hive (for saving in favourite and write to DB)
+- SharedPreferences for creating new comments/post (may be something will change during the proccess, but the main idea is still the same)
+- Flutter_Bloc/Bloc/Cubit 
+- Dio package (because I have never used it before) 
+- Freezed (for code generation)
 
-A few resources to get you started if this is your first Flutter project:
+I will try to make the application as beautiful as possible. I don't have the mindset of a designer of amazingly beautiful applications (in terms of UI), I just want to use a certain technology stack. This is just a tutorial project where I'm trying to understand the basics of some of the most popular Flutter technologies (nothing fancy)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+P.S
+I will also post screenshots of my study project if I think it is beautiful enough to be in this portfolio.
