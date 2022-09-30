@@ -35,7 +35,7 @@ class UsersApi {
 
   Future<List<Comments>>? fetchComments(int id) async {
     try {
-      Response response = await _dio.get('/comments/$id');
+      Response response = await _dio.get('/comments');
       var commentsList = (response.data as List)
           .map((comments) => Comments.fromJson(comments))
           .toList();

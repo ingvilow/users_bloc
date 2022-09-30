@@ -12,9 +12,9 @@ class CommentsBloc extends Bloc<CommentsEvent, CommentsState> {
         if (event is CommentsEventById) {
           const CommentsState.loading();
           try {
-            final List<Comments>? comments =
-                await repository.getComments(repository.id);
-            emit(CommentsState.data(comments ?? []));
+            final List<Comments>? comments = await repository.getComments();
+            emit(CommentsState.data(comments?.reversed.toList() ?? []));
+            print(comments);
           } catch (e) {
             const CommentsState.error();
           }

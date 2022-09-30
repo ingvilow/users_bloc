@@ -9,4 +9,7 @@ class ColorsApp {
   static const Color russianVioleteM = Color(0xFF705BA9);
   static const Color russianVioleteMV = Color(0xFF897CB0);
   static const Color lavander = Color(0xFFEEE5FF);
+
+  static const Color gradientCardComments = Color(0xFF33539E);
+  static const Color gradientCardCommentsLighter = Color(0xFFBFB8DA);
 }
