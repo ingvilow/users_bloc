@@ -5,17 +5,31 @@ import 'package:flutter_test_bloc/comments_bloc/CommentsBloc.dart';
 import 'package:flutter_test_bloc/comments_bloc/comments_state.dart';
 import 'package:flutter_test_bloc/models/comments_model/comments_users.dart';
 import 'package:flutter_test_bloc/styles/colors.dart';
+import 'package:flutter_test_bloc/theme_changing_bloc/switch_state.dart';
+import 'package:flutter_test_bloc/theme_changing_bloc/theme_bloc_shared.dart';
 
 import 'package:flutter_test_bloc/ui/widget/error_widget.dart';
 
 class CommentsPage extends StatelessWidget {
-  const CommentsPage({Key? key}) : super(key: key);
+  CommentsPage({Key? key}) : super(key: key);
 
+  bool swithcing = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
+        leading: BlocBuilder<ChangeThemeCubit, SwitchState>(
+            builder: (context, state) {
+          return Switch(
+            activeColor: ColorsApp.russianVioleteMV,
+            inactiveTrackColor: ColorsApp.lavander,
+            onChanged: (bool value) {
+              context.read<ChangeThemeCubit>().toggleSwitch(value);
+            },
+            value: state.isDarkThemeOn,
+          );
+        }),
       ),
       body: BlocBuilder<CommentsBloc, CommentsState>(
         builder: (context, state) {
