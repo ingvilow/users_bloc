@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test_bloc/models/Users.dart';
+import 'package:flutter_test_bloc/routing_names/routing.dart';
 import 'package:flutter_test_bloc/styles/colors.dart';
 import 'package:flutter_test_bloc/ui/custom_app_bar_sliver/select_category_over_sliver.dart';
 import 'package:flutter_test_bloc/ui/widget/error_widget.dart';
@@ -41,6 +42,12 @@ class UsersNameSliver extends StatelessWidget {
                         elevation: 2,
                         child: ListTile(
                           title: Text(usersList[index].name ?? ''),
+                          onTap: () {
+                            Navigator.pushNamed(
+                              context,
+                              DynamicRouting.CommentsPageroute,
+                            );
+                          },
                         ),
                       );
                     }, childCount: usersList.length),

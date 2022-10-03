@@ -1,16 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test_bloc/styles/colors.dart';
 
-/// класс для устанвки темы в приложении
-class AppTheme {
-  static const appBarTheme = AppBarTheme(
-    backgroundColor: ColorsApp.russianViolete,
-    elevation: 0,
-  );
+enum AppTheme { dark, light }
 
-  static ThemeData get defaultTheme => ThemeData(
-        backgroundColor: ColorsApp.white,
-        appBarTheme: appBarTheme,
-        scaffoldBackgroundColor: ColorsApp.white,
-      );
-}
+/// класс для устанвки темы в приложении
+
+final appThemeData = {
+  AppTheme.light: ThemeData(
+    backgroundColor: ColorsApp.white,
+    appBarTheme: const AppBarTheme(color: Colors.white),
+    brightness: Brightness.light,
+    scaffoldBackgroundColor: ColorsApp.white,
+  ),
+  AppTheme.dark: ThemeData(
+    backgroundColor: Colors.black,
+    appBarTheme: const AppBarTheme(backgroundColor: Colors.black),
+    brightness: Brightness.dark,
+  ),
+};

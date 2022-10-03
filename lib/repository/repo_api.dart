@@ -8,5 +8,5 @@ class Repository {
 
   Future<List<Users>>? getUsers() => api.fetchUsers();
 
-  Future<List<Comments>>? getComments(id) => api.fetchComments(id ?? 0);
+  Future<List<Comments>>? getComments() => api.fetchComments(id ?? 0);
 }
